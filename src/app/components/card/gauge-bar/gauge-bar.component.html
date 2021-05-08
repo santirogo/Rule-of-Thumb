@@ -1,14 +1,14 @@
 <div class="gauge-bar" [ngClass]="{'gauge-bar-grid': type === 0}">
   <div class="like-section" [ngStyle]="{'width': service.calculatePercentages(votes)[0] + '%'}">
     <div class="info-section">
-      <img class="thumb-icon" src="/assets/img/thumbs-up.svg" alt="up" />
+      <img class="thumb-icon" [src]="service.getThumbUpImageUrl()" alt="up" />
       <span class="percentage-data">{{service.calculatePercentages(votes)[0].toFixed(1)}}%</span>
     </div>
   </div>
   <div class="dislike-section" [ngStyle]="{'width': service.calculatePercentages(votes)[1] + '%'}">
     <div class="info-section">
       <span class="percentage-data">{{service.calculatePercentages(votes)[1].toFixed(1)}}%</span>
-      <img class="thumb-icon" src="/assets/img/thumbs-down.svg" alt="down" />
+      <img class="thumb-icon" [src]="service.getThumbDownImageUrl()" alt="down" />
     </div>
   </div>
 </div>

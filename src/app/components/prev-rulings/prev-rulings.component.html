@@ -1,4 +1,4 @@
-<div class="prev-rulings">
+<div class="prev-rulings" *ngIf="!isLoading; else spinner">
   <div class="prev-rulings-header">
     <span class="title">Previous Rulings</span>
     <zem-custom-select
@@ -25,3 +25,6 @@
     <zem-card *ngFor="let person of people; let i = index" [type]="0" [info]="person" [position]="i"></zem-card>
   </div>
 </div>
+<ng-template #spinner class="spinner">
+  <zem-spinner></zem-spinner>
+</ng-template>

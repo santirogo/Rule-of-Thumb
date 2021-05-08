@@ -9,6 +9,7 @@ import { PrevRulingsComponent } from './components/prev-rulings/prev-rulings.com
 import { CustomSelectComponent } from './components/shared/custom-select/custom-select.component';
 import { CardComponent } from './components/card/card.component';
 import { GaugeBarComponent } from './components/card/gauge-bar/gauge-bar.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GaugeBarComponent } from './components/card/gauge-bar/gauge-bar.compone
     PrevRulingsComponent,
     CustomSelectComponent,
     CardComponent,
-    GaugeBarComponent
+    GaugeBarComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

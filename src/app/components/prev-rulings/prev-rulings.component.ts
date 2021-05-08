@@ -12,11 +12,13 @@ export class PrevRulingsComponent implements OnInit {
   public selectOptions: string[];
   public cardType = 0;
   public people: PersonModel[];
+  public isLoading = false;
 
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
     this.selectOptions = ['Grid', 'List'];
+    this.isLoading = true;
     this.peopleService.getPeople().subscribe((people) => {
       this.people = [];
       people.forEach((person) => {
@@ -25,6 +27,11 @@ export class PrevRulingsComponent implements OnInit {
         personObject.lastUpdated = new Date((personObject.lastUpdated.seconds) * 1000);
         this.people.push(personObject);
       });
+      console.log('fin');
+      this.isLoading = false;
+    }, (error) => {
+      this.isLoading = false;
+      console.error(error);
     });
   }
 

@@ -2,6 +2,7 @@ $prev-rulings: 'prev-rulings';
 $prev-rulings-header: 'prev-rulings-header';
 $title: 'title';
 $mobile-cards-field: 'mobile-cards-field';
+$spinner: 'spinner';
 .#{$prev-rulings} {
   .#{$prev-rulings-header} {
     display: flex;
@@ -15,4 +16,7 @@ $mobile-cards-field: 'mobile-cards-field';
     max-width: 100%;
     overflow-x: auto;
   }
+}
+.#{$spinner} {
+
 }
