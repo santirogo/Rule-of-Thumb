@@ -27,7 +27,6 @@ export class PrevRulingsComponent implements OnInit {
         personObject.lastUpdated = new Date((personObject.lastUpdated.seconds) * 1000);
         this.people.push(personObject);
       });
-      console.log('fin');
       this.isLoading = false;
     }, (error) => {
       this.isLoading = false;
