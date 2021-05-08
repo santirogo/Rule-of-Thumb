@@ -108,6 +108,13 @@ $breakpoint-mobile: 720px;
           }
         }
       }
+      &:after {
+        width: 267px;
+        content:'';
+        position:absolute;
+        background: linear-gradient(to left, #888 0%,rgba(255,255,255,0) 69%);
+        height:100%;
+      }
     }
   }
   &.#{$custom-card-grid} {
@@ -165,6 +172,9 @@ $breakpoint-mobile: 720px;
           .#{$voting-section} {
             margin: 0 34px 0 0;
           }
+        }
+        &:after {
+          all: unset;
         }
       }
     }
