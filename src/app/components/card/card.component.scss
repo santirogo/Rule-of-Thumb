@@ -18,6 +18,8 @@ $card-description-info: 'card-description-info';
 $voting-section: 'voting-section';
 $last-updated: 'last-updated';
 $last-updated-info: 'last-updated-info';
+$voting-main-section: 'voting-main-section';
+$breakpoint-mobile: 720px;
 .#{$custom-card} {
   background: #888888;
   height: 170px;
@@ -162,6 +164,24 @@ $last-updated-info: 'last-updated-info';
           }
           .#{$voting-section} {
             margin: 0 34px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .#{$custom-card} {
+    &.#{$custom-card-grid} {
+      height: 300px;
+      margin-right: 10px;
+      width: 300px;
+      .#{$container-card} {
+        height: 300px;
+        width: 300px;
+        .#{$card-info} {
+          .#{$voting-main-section} {
+            display: flex;
           }
         }
       }
