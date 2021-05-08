@@ -1,0 +1,14 @@
+<div class="gauge-bar" [ngClass]="{'gauge-bar-grid': type === 0}">
+  <div class="like-section" [ngStyle]="{'width': likePercentage}">
+    <div class="info-section">
+      <img class="thumb-icon" src="/assets/img/thumbs-up.svg" alt="up" />
+      <span class="percentage-data">50%</span>
+    </div>
+  </div>
+  <div class="dislike-section" [ngStyle]="{'width': dislikePercentage}">
+    <div class="info-section">
+      <span class="percentage-data">50%</span>
+      <img class="thumb-icon" src="/assets/img/thumbs-down.svg" alt="down" />
+    </div>
+  </div>
+</div>

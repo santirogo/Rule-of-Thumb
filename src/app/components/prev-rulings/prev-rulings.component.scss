@@ -1,0 +1,13 @@
+$prev-rulings: 'prev-rulings';
+$prev-rulings-header: 'prev-rulings-header';
+$title: 'title';
+.#{$prev-rulings} {
+  .#{$prev-rulings-header} {
+    display: flex;
+    justify-content: space-between;
+  }
+  .#{$title} {
+    font-size: 45px;
+    font-weight: 300;
+  }
+}

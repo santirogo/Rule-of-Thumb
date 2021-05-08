@@ -1,0 +1,138 @@
+@import "~src/assets/styles/variables";
+$custom-card: 'custom-card';
+$custom-card-grid: 'custom-card-grid';
+$container-card: 'container-card';
+$status-icon: 'status-icon';
+$thumb-box: 'thumb-box';
+$thumb-up: 'thumb-up';
+$thumb-down: 'thumb-down';
+$vote-button: 'vote-button';
+$current-status: 'current-status';
+$card-info: 'card-info';
+$photo: 'photo';
+$photo-grid: 'photo-grid';
+$card-description: 'card-description';
+$card-description-title: 'card-description-title';
+$card-description-info: 'card-description-info';
+$voting-section: 'voting-section';
+$last-updated: 'last-updated';
+$last-updated-info: 'last-updated-info';
+.#{$custom-card} {
+  background: #888888;
+  height: 170px;
+  width: 100%;
+  .#{$container-card} {
+    position: relative;
+    .#{$thumb-box} {
+      cursor: pointer;
+      display: inline-block;
+      height: 45px;
+      margin-left: 12px;
+      position: relative;
+      width: 45px;
+      &.#{$thumb-up} {
+        background-color: $light-blue;
+      }
+      &.#{$thumb-down} {
+        background-color: $canary-yellow;
+      }
+      &.#{$current-status} {
+        cursor: auto;
+        left: 0;
+        margin-left: 0;
+        position: absolute;
+        top: 0;
+      }
+      img {
+        position: absolute;
+        left: 15px;
+        top: 13px;
+      }
+    }
+    .#{$vote-button} {
+      background-color: #000;
+      border: 1px solid $white;
+      color: $white;
+      cursor: pointer;
+      height: 45px;
+      margin-left: 12px;
+      opacity: 0.6;
+      vertical-align: top;
+      width: 135px;
+    }
+    .#{$card-info} {
+      display: flex;
+      .#{$photo} {
+        width: 267px;
+      }
+      .#{$card-description} {
+        color: $white;
+        width: 50%;
+        z-index: 10;
+        .#{$card-description-title} {
+          font-size: 36px;
+        }
+        .#{$card-description-info} {
+          font-size: 18px;
+        }
+      }
+      .#{$voting-section} {
+        margin: 0 auto;
+        text-align: right;
+        .#{$last-updated} {
+          .#{$last-updated-info} {
+            color: $white;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  &.#{$custom-card-grid} {
+    background: transparent;
+    height: 348px;
+    width: 348px;
+    .#{$container-card} {
+      height: 348px;
+      width: 348px;
+      .#{$thumb-box} {
+        height: 30px;
+        width: 30px;
+        img {
+          left: 8px;
+          top:8px;
+        }
+        &.#{$current-status} {
+          top: 135px;
+        }
+      }
+      .#{$vote-button} {
+        height: 38px;
+
+        width: 107px;
+      }
+      .#{$card-info} {
+        flex-direction: column;
+        .#{$photo} {
+          background-position: center;
+          background-size: cover;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          width: 100%;
+          z-index: -1;
+        }
+        .#{$card-description} {
+          margin: 125px auto 0 auto;
+          width: 75%;
+          .#{$card-description-info} {
+            font-size: 15px;
+          }
+        }
+        .#{$voting-section} {
+          margin: 0 34px 0 0;
+        }
+      }
+    }
+  }
+}

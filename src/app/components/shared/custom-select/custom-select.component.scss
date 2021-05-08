@@ -1,0 +1,37 @@
+$custom-select: 'custom-select';
+$main-select: 'main-select';
+$label: 'label';
+$arrow: 'arrow';
+$options: 'options';
+$option: 'option';
+.#{$custom-select} {
+  display: inline-block;
+  position: relative;
+  .#{$main-select} {
+    background-color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+    height: 36px;
+    position: relative;
+    text-align: center;
+    width: 173px;
+    .#{$arrow} {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .#{$label} {
+      line-height: 36px;
+      vertical-align: middle;
+    }
+  }
+  .#{$options} {
+    position: absolute;
+    z-index: 15;
+    .#{$option} {
+      border: 2px solid #333;
+      border-top: 0;
+    }
+  }
+}

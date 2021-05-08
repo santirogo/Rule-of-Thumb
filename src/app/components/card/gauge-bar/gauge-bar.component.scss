@@ -1,0 +1,49 @@
+@import "~src/assets/styles/variables";
+$gauge-bar: 'gauge-bar';
+$gauge-bar-grid: 'gauge-bar-grid';
+$like-section: 'like-section';
+$dislike-section: 'dislike-section';
+$percentage-data: 'percentage-data';
+$info-section: 'info-section';
+$thumb-icon: 'thumb-icon';
+.#{$gauge-bar} {
+  bottom: 0;
+  display: flex;
+  height: 54px;
+  position: absolute;
+  width: 100%;
+  .#{$like-section} {
+    background-color: $light-blue;
+    display: flex;
+  }
+  .#{$dislike-section} {
+    background-color: $canary-yellow-opacity;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .#{$info-section} {
+    align-self: center;
+    opacity: 1;
+    .#{$percentage-data} {
+      color: $white;
+      font-size: 27px;
+    }
+    .#{$thumb-icon} {
+      height: 22.5px;
+      margin: 0 15px;
+      width: 22.5px;
+    }
+  }
+  &.#{$gauge-bar-grid} {
+    height: 36px;
+    .#{$info-section} {
+      .#{$percentage-data} {
+        font-size: 18px;
+      }
+      .#{$thumb-icon} {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+}

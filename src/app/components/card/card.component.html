@@ -1,0 +1,29 @@
+<div class="custom-card" [ngClass]="{'custom-card-grid': type === 0}">
+  <div class="container-card">
+    <div class="thumb-box current-status thumb-up">
+      <img [src]="currentStatus" alt="thumb">
+    </div>
+    <div class="card-info">
+      <img class="photo" [src]="sanitize.bypassSecurityTrustUrl(photo)" alt="photo">
+      <div class="card-description">
+        <span class="card-description-title">Kanye West</span><br />
+        <span class="card-description-info">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…</span>
+      </div>
+      <div class="voting-section">
+        <div class="last-updated">
+          <p class="last-updated-info">1 month ago in Entertainment</p>
+        </div>
+        <div>
+          <div class="thumb-box thumb-up">
+            <img src="/assets/img/thumbs-up.svg" alt="thumb" />
+          </div>
+          <div class="thumb-box thumb-down">
+            <img src="/assets/img/thumbs-down.svg" alt="thumb" />
+          </div>
+          <button class="vote-button">Vote Now</button>
+        </div>
+      </div>
+    </div>
+    <zem-gauge-bar [type]="type"></zem-gauge-bar>
+  </div>
+</div>

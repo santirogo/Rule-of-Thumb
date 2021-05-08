@@ -1,0 +1,9 @@
+<div class="prev-rulings">
+  <div class="prev-rulings-header">
+    <span class="title">Previous Rulings</span>
+    <zem-custom-select [options]="selectOptions" (onChange)="changeType($event)"></zem-custom-select>
+  </div>
+  <div class="cards-field">
+    <zem-card [type]="cardType"></zem-card>
+  </div>
+</div>
