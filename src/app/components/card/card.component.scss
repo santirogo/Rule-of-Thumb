@@ -5,6 +5,7 @@ $container-card: 'container-card';
 $status-icon: 'status-icon';
 $thumb-box: 'thumb-box';
 $thumb-up: 'thumb-up';
+$option-selected: 'option-selected';
 $thumb-down: 'thumb-down';
 $vote-button: 'vote-button';
 $current-status: 'current-status';
@@ -36,6 +37,13 @@ $last-updated-info: 'last-updated-info';
       &.#{$thumb-down} {
         background-color: $canary-yellow;
       }
+      &.#{$option-selected} {
+        border: 2px solid $white;
+        img {
+          left: 6px;
+          top: 5px;
+        }
+      }
       &.#{$current-status} {
         cursor: auto;
         left: 0;
@@ -56,9 +64,12 @@ $last-updated-info: 'last-updated-info';
       cursor: pointer;
       height: 45px;
       margin-left: 12px;
-      opacity: 0.6;
       vertical-align: top;
       width: 135px;
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
     }
     .#{$card-info} {
       display: flex;
@@ -71,6 +82,10 @@ $last-updated-info: 'last-updated-info';
         width: calc(100% - 267px);
         .#{$card-description} {
           color: $white;
+          max-height: 170px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           width: 50%;
           z-index: 10;
           .#{$card-description-title} {
@@ -106,6 +121,12 @@ $last-updated-info: 'last-updated-info';
         img {
           left: 8px;
           top:8px;
+        }
+        &.#{$option-selected} {
+          img {
+            left: 6px;
+            top: 5px;
+          }
         }
         &.#{$current-status} {
           top: 135px;

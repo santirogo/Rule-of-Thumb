@@ -20,13 +20,27 @@
             </p>
           </div>
           <div>
-            <div class="thumb-box thumb-up">
+            <div
+              class="thumb-box thumb-up"
+              [ngClass]="{'option-selected': isUpSelected}"
+              (click)="selectOption(0)"
+            >
               <img [src]="service.getThumbUpImageUrl()" alt="thumb" />
             </div>
-            <div class="thumb-box thumb-down">
+            <div
+              class="thumb-box thumb-down"
+              [ngClass]="{'option-selected': isDownSelected}"
+              (click)="selectOption(1)"
+            >
               <img [src]="service.getThumbDownImageUrl()" alt="thumb" />
             </div>
-            <button class="vote-button">Vote Now</button>
+            <button
+              class="vote-button"
+              (click)="service.vote(info, optionSelected)"
+              [disabled]="optionSelected === undefined"
+            >
+              Vote Now
+            </button>
           </div>
         </div>
       </div>

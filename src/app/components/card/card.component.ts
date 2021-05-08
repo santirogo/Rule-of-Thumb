@@ -12,13 +12,20 @@ import {CardService} from './card.service';
 export class CardComponent implements OnInit {
   @Input() type: number;
   @Input() info: PersonModel;
-  public currentStatus = '/assets/img/thumbs-up.svg';
+  public isUpSelected = false;
+  public isDownSelected = false;
+  public optionSelected: number;
 
   constructor(public service: CardService, public sanitize: DomSanitizer) {
   }
 
   ngOnInit(): void {
-    this.service.calculateTime(this.info.lastUpdated);
+  }
+
+  public selectOption(value: number): void {
+    this.isUpSelected = value === 0;
+    this.isDownSelected = value === 1;
+    this.optionSelected = value;
   }
 
 }

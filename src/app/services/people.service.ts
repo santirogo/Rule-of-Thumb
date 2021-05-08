@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {PersonModel} from '../models/person.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PeopleService {
     return this.firestore.collection('people').snapshotChanges();
   }
 
-  public updatePerson(id: string, data: any): void {
+  public updatePerson(id: string, data: PersonModel): void {
     this.firestore.collection('people').doc(id).set(data).then();
   }
 }
