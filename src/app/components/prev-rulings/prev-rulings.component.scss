@@ -1,6 +1,7 @@
 $prev-rulings: 'prev-rulings';
 $prev-rulings-header: 'prev-rulings-header';
 $title: 'title';
+$mobile-cards-field: 'mobile-cards-field';
 .#{$prev-rulings} {
   .#{$prev-rulings-header} {
     display: flex;
@@ -9,5 +10,9 @@ $title: 'title';
   .#{$title} {
     font-size: 45px;
     font-weight: 300;
+  }
+  .#{$mobile-cards-field} {
+    max-width: 100%;
+    overflow-x: auto;
   }
 }

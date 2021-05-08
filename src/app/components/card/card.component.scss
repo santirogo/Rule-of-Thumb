@@ -40,8 +40,8 @@ $last-updated-info: 'last-updated-info';
       &.#{$option-selected} {
         border: 2px solid $white;
         img {
-          left: 6px;
-          top: 5px;
+          left: 12px;
+          top: 11px;
         }
       }
       &.#{$current-status} {

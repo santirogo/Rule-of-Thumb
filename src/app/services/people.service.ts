@@ -14,6 +14,7 @@ export class PeopleService {
   }
 
   public updatePerson(id: string, data: PersonModel): void {
+    console.log('update!');
     this.firestore.collection('people').doc(id).set(data).then();
   }
 }

@@ -1,9 +1,13 @@
 <div class="prev-rulings">
   <div class="prev-rulings-header">
     <span class="title">Previous Rulings</span>
-    <zem-custom-select [options]="selectOptions" (onChange)="changeType($event)"></zem-custom-select>
+    <zem-custom-select
+      [options]="selectOptions"
+      (onChange)="changeType($event)"
+      class="d-none d-md-inline"
+    ></zem-custom-select>
   </div>
-  <div class="cards-field">
+  <div class="cards-field d-none d-md-block">
     <ng-container *ngIf="cardType === 0; else cardlistField">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let person of people">
@@ -16,5 +20,8 @@
         <zem-card [type]="cardType" [info]="person"></zem-card>
       </div>
     </ng-template>
+  </div>
+  <div class="mobile-cards-field d-inline-flex d-md-none">
+    <zem-card *ngFor="let person of people" [type]="cardType" [info]="person"></zem-card>
   </div>
 </div>
