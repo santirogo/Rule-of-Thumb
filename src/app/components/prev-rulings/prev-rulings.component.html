@@ -4,6 +4,15 @@
     <zem-custom-select [options]="selectOptions" (onChange)="changeType($event)"></zem-custom-select>
   </div>
   <div class="cards-field">
-    <zem-card *ngFor="let person of people" [type]="cardType" [info]="person"></zem-card>
+    <ng-container *ngIf="cardType === 0; else cardlistField">
+      <div class="row mt-3">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let person of people">
+          <zem-card [type]="cardType" [info]="person"></zem-card>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #cardlistField>
+      <zem-card *ngFor="let person of people" [type]="cardType" [info]="person"></zem-card>
+    </ng-template>
   </div>
 </div>
