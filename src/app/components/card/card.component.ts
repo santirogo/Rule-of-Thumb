@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ConstantsService} from '../../services/constants.service';
 import {DomSanitizer} from '@angular/platform-browser';
+import {PersonModel} from '../../models/person.model';
 
 @Component({
   selector: 'zem-card',
@@ -9,6 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class CardComponent implements OnInit {
   @Input() type: number;
+  @Input() info: PersonModel;
   public photo: string;
   public currentStatus = '/assets/img/thumbs-up.svg';
 

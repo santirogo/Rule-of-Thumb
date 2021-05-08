@@ -4,23 +4,25 @@
       <img [src]="currentStatus" alt="thumb">
     </div>
     <div class="card-info">
-      <img class="photo" [src]="sanitize.bypassSecurityTrustUrl(photo)" alt="photo">
-      <div class="card-description">
-        <span class="card-description-title">Kanye West</span><br />
-        <span class="card-description-info">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit…</span>
-      </div>
-      <div class="voting-section">
-        <div class="last-updated">
-          <p class="last-updated-info">1 month ago in Entertainment</p>
+      <img class="photo" [src]="sanitize.bypassSecurityTrustUrl(info.picture)" alt="photo">
+      <div class="card-info-grid">
+        <div class="card-description">
+          <span class="card-description-title">{{ info.name }}</span><br />
+          <span class="card-description-info">{{ info.description }}</span>
         </div>
-        <div>
-          <div class="thumb-box thumb-up">
-            <img src="/assets/img/thumbs-up.svg" alt="thumb" />
+        <div class="voting-section">
+          <div class="last-updated">
+            <p class="last-updated-info">1 month ago in Entertainment</p>
           </div>
-          <div class="thumb-box thumb-down">
-            <img src="/assets/img/thumbs-down.svg" alt="thumb" />
+          <div>
+            <div class="thumb-box thumb-up">
+              <img src="/assets/img/thumbs-up.svg" alt="thumb" />
+            </div>
+            <div class="thumb-box thumb-down">
+              <img src="/assets/img/thumbs-down.svg" alt="thumb" />
+            </div>
+            <button class="vote-button">Vote Now</button>
           </div>
-          <button class="vote-button">Vote Now</button>
         </div>
       </div>
     </div>

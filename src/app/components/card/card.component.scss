@@ -10,7 +10,7 @@ $vote-button: 'vote-button';
 $current-status: 'current-status';
 $card-info: 'card-info';
 $photo: 'photo';
-$photo-grid: 'photo-grid';
+$card-info-grid: 'card-info-grid';
 $card-description: 'card-description';
 $card-description-title: 'card-description-title';
 $card-description-info: 'card-description-info';
@@ -63,26 +63,31 @@ $last-updated-info: 'last-updated-info';
     .#{$card-info} {
       display: flex;
       .#{$photo} {
+        height: 170px;
         width: 267px;
       }
-      .#{$card-description} {
-        color: $white;
-        width: 50%;
-        z-index: 10;
-        .#{$card-description-title} {
-          font-size: 36px;
+      .#{$card-info-grid} {
+        display: flex;
+        width: calc(100% - 267px);
+        .#{$card-description} {
+          color: $white;
+          width: 50%;
+          z-index: 10;
+          .#{$card-description-title} {
+            font-size: 36px;
+          }
+          .#{$card-description-info} {
+            font-size: 18px;
+          }
         }
-        .#{$card-description-info} {
-          font-size: 18px;
-        }
-      }
-      .#{$voting-section} {
-        margin: 0 auto;
-        text-align: right;
-        .#{$last-updated} {
-          .#{$last-updated-info} {
-            color: $white;
-            font-size: 15px;
+        .#{$voting-section} {
+          margin: 0 auto;
+          text-align: right;
+          .#{$last-updated} {
+            .#{$last-updated-info} {
+              color: $white;
+              font-size: 15px;
+            }
           }
         }
       }
@@ -122,15 +127,21 @@ $last-updated-info: 'last-updated-info';
           width: 100%;
           z-index: -1;
         }
-        .#{$card-description} {
-          margin: 125px auto 0 auto;
+        .#{$card-info-grid} {
+          bottom: 45px;
+          display: initial;
+          left: 45px;
+          position: absolute;
           width: 75%;
-          .#{$card-description-info} {
-            font-size: 15px;
+          .#{$card-description} {
+            width: 75%;
+            .#{$card-description-info} {
+              font-size: 15px;
+            }
           }
-        }
-        .#{$voting-section} {
-          margin: 0 34px 0 0;
+          .#{$voting-section} {
+            margin: 0 34px 0 0;
+          }
         }
       }
     }

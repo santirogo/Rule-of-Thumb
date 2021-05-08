@@ -4,6 +4,6 @@
     <zem-custom-select [options]="selectOptions" (onChange)="changeType($event)"></zem-custom-select>
   </div>
   <div class="cards-field">
-    <zem-card [type]="cardType"></zem-card>
+    <zem-card *ngFor="let person of people" [type]="cardType" [info]="person"></zem-card>
   </div>
 </div>
