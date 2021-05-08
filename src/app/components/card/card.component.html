@@ -15,7 +15,9 @@
         </div>
         <div class="voting-section">
           <div class="last-updated">
-            <p class="last-updated-info">1 month ago in Entertainment</p>
+            <p class="last-updated-info">
+              {{ service.calculateTime(info.lastUpdated) }} month ago in {{ info.category }}
+            </p>
           </div>
           <div>
             <div class="thumb-box thumb-up">

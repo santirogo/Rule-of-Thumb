@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.service.calculateTime(this.info.lastUpdated);
   }
 
 }

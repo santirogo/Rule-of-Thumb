@@ -13,6 +13,11 @@ export class CardService {
     return votes.positive > votes.negative;
   }
 
+  public calculateTime(date: Date): number {
+    const currentDate = new Date();
+    return currentDate.getMonth() - date.getMonth() + ((currentDate.getFullYear() - date.getFullYear()) * 12);
+  }
+
   public getThumbUpImageUrl(): string {
     return this.constantsService.THUMB_UP_IMAGE_URL;
   }

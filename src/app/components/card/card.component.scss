@@ -134,7 +134,7 @@ $last-updated-info: 'last-updated-info';
           position: absolute;
           width: 75%;
           .#{$card-description} {
-            width: 75%;
+            width: 100%;
             .#{$card-description-info} {
               font-size: 15px;
             }
