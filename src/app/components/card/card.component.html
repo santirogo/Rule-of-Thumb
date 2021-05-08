@@ -14,34 +14,49 @@
           <span class="card-description-info">{{ info.description }}</span>
         </div>
         <div class="voting-section">
-          <div class="last-updated">
-            <p class="last-updated-info">
-              {{ service.calculateTime(info.lastUpdated) }} month ago in {{ info.category }}
-            </p>
-          </div>
-          <div class="voting-main-section">
-            <div
-              class="thumb-box thumb-up"
-              [ngClass]="{'option-selected': isUpSelected}"
-              (click)="selectOption(0)"
-            >
-              <img [src]="service.getThumbUpImageUrl()" alt="thumb" />
+          <ng-container *ngIf="!service.votedStatusPerson[position]; else voted">
+            <div class="last-updated">
+              <p class="last-updated-info">
+                {{ service.calculateTime(info.lastUpdated) }} month ago in {{ info.category }}
+              </p>
             </div>
-            <div
-              class="thumb-box thumb-down"
-              [ngClass]="{'option-selected': isDownSelected}"
-              (click)="selectOption(1)"
-            >
-              <img [src]="service.getThumbDownImageUrl()" alt="thumb" />
+            <div class="voting-main-section">
+              <div
+                class="thumb-box thumb-up"
+                [ngClass]="{'option-selected': isUpSelected}"
+                (click)="selectOption(0)"
+              >
+                <img [src]="service.getThumbUpImageUrl()" alt="thumb" />
+              </div>
+              <div
+                class="thumb-box thumb-down"
+                [ngClass]="{'option-selected': isDownSelected}"
+                (click)="selectOption(1)"
+              >
+                <img [src]="service.getThumbDownImageUrl()" alt="thumb" />
+              </div>
+              <button
+                class="vote-button"
+                (click)="service.vote(info, optionSelected, position)"
+                [disabled]="optionSelected === undefined"
+              >
+                Vote Now
+              </button>
+            </div>
+          </ng-container>
+          <ng-template #voted>
+            <div class="last-updated">
+              <p class="last-updated-info">
+                Thank for you vote!
+              </p>
             </div>
             <button
               class="vote-button"
-              (click)="service.vote(info, optionSelected)"
-              [disabled]="optionSelected === undefined"
+              (click)="service.updateVotedStatusPerson(position)"
             >
-              Vote Now
+              Vote Again
             </button>
-          </div>
+          </ng-template>
         </div>
       </div>
     </div>

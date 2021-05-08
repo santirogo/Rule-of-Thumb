@@ -12,6 +12,7 @@ import {CardService} from './card.service';
 export class CardComponent implements OnInit {
   @Input() type: number;
   @Input() info: PersonModel;
+  @Input() position: number;
   public isUpSelected = false;
   public isDownSelected = false;
   public optionSelected: number;

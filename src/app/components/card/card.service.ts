@@ -8,6 +8,14 @@ import {PeopleService} from '../../services/people.service';
 })
 export class CardService {
 
+  public votedStatusPerson = [
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
+
   constructor(private constantsService: ConstantsService, private peopleService: PeopleService) { }
 
   public isUpWinning(votes: Vote): boolean {
@@ -19,13 +27,18 @@ export class CardService {
     return currentDate.getMonth() - date.getMonth() + ((currentDate.getFullYear() - date.getFullYear()) * 12);
   }
 
-  public vote(info: PersonModel, option: number): void {
+  public vote(info: PersonModel, option: number, position: number): void {
     if (option === 0) {
       info.votes.positive++;
     } else {
       info.votes.negative++;
     }
     this.peopleService.updatePerson(info.id, info);
+    this.updateVotedStatusPerson(position);
+  }
+
+  public updateVotedStatusPerson(position: number): void {
+    this.votedStatusPerson[position] = !this.votedStatusPerson[position];
   }
 
   public getThumbUpImageUrl(): string {

@@ -10,18 +10,18 @@
   <div class="cards-field d-none d-md-block">
     <ng-container *ngIf="cardType === 0; else cardlistField">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let person of people">
-          <zem-card [type]="cardType" [info]="person"></zem-card>
+        <div class="col-12 col-md-6 col-lg-4 mt-4" *ngFor="let person of people; let i = index">
+          <zem-card [type]="cardType" [info]="person" [position]="i"></zem-card>
         </div>
       </div>
     </ng-container>
     <ng-template #cardlistField>
-      <div class="mt-3" *ngFor="let person of people">
-        <zem-card [type]="cardType" [info]="person"></zem-card>
+      <div class="mt-3" *ngFor="let person of people; let i = index">
+        <zem-card [type]="cardType" [info]="person" [position]="i"></zem-card>
       </div>
     </ng-template>
   </div>
   <div class="mobile-cards-field d-inline-flex d-md-none">
-    <zem-card *ngFor="let person of people" [type]="0" [info]="person"></zem-card>
+    <zem-card *ngFor="let person of people; let i = index" [type]="0" [info]="person" [position]="i"></zem-card>
   </div>
 </div>

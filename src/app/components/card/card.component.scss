@@ -98,12 +98,14 @@ $breakpoint-mobile: 720px;
           }
         }
         .#{$voting-section} {
-          margin: 0 auto;
+          margin: 0 30px 0 auto;
           text-align: right;
           .#{$last-updated} {
             .#{$last-updated-info} {
               color: $white;
               font-size: 15px;
+              margin-bottom: 10px;
+              margin-top: 15px;
             }
           }
         }
