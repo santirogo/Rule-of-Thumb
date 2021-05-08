@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Vote} from '../../../models/person.model';
+import {GaugeBarService} from './gauge-bar.service';
 
 @Component({
   selector: 'zem-gauge-bar',
@@ -7,10 +9,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GaugeBarComponent implements OnInit {
   @Input() type: number;
-  public likePercentage = '50%';
-  public dislikePercentage = '50%';
+  @Input() votes: Vote;
 
-  constructor() { }
+  constructor(public service: GaugeBarService) { }
 
   ngOnInit(): void {
   }

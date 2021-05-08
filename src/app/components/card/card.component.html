@@ -1,7 +1,10 @@
 <div class="custom-card" [ngClass]="{'custom-card-grid': type === 0}">
   <div class="container-card">
-    <div class="thumb-box current-status thumb-up">
-      <img [src]="currentStatus" alt="thumb">
+    <div class="thumb-box current-status" [ngClass]="service.isUpWinning(info.votes) ? 'thumb-up': 'thumb-down'">
+      <img
+        [src]="service.isUpWinning(info.votes) ? service.getThumbUpImageUrl() : service.getThumbDownImageUrl()"
+        alt="thumb"
+      />
     </div>
     <div class="card-info">
       <img class="photo" [src]="sanitize.bypassSecurityTrustUrl(info.picture)" alt="photo">
@@ -16,16 +19,16 @@
           </div>
           <div>
             <div class="thumb-box thumb-up">
-              <img src="/assets/img/thumbs-up.svg" alt="thumb" />
+              <img [src]="service.getThumbUpImageUrl()" alt="thumb" />
             </div>
             <div class="thumb-box thumb-down">
-              <img src="/assets/img/thumbs-down.svg" alt="thumb" />
+              <img [src]="service.getThumbDownImageUrl()" alt="thumb" />
             </div>
             <button class="vote-button">Vote Now</button>
           </div>
         </div>
       </div>
     </div>
-    <zem-gauge-bar [type]="type"></zem-gauge-bar>
+    <zem-gauge-bar [type]="type" [votes]="info.votes"></zem-gauge-bar>
   </div>
 </div>

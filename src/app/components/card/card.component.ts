@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ConstantsService} from '../../services/constants.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {PersonModel} from '../../models/person.model';
+import {CardService} from './card.service';
 
 @Component({
   selector: 'zem-card',
@@ -11,11 +12,9 @@ import {PersonModel} from '../../models/person.model';
 export class CardComponent implements OnInit {
   @Input() type: number;
   @Input() info: PersonModel;
-  public photo: string;
   public currentStatus = '/assets/img/thumbs-up.svg';
 
-  constructor(private constants: ConstantsService, public sanitize: DomSanitizer) {
-    this.photo = this.constants.IMAGEN;
+  constructor(public service: CardService, public sanitize: DomSanitizer) {
   }
 
   ngOnInit(): void {
