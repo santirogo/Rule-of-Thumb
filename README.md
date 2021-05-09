@@ -1,6 +1,13 @@
-# UiTest
+# Zemoga UI test
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png" width="200">
+<p align="center"><img src="https://www.gstatic.com/devrel-devsite/prod/ve6010286661f973c8a44ecd021b66ac8957259bcceefb6c1b1428b622ca8a90e/firebase/images/touchicon-180.png" width="200">
+
+## Github Page
+
+https://santirogo.github.io/Rule-of-Thumb/
 
 ## Development server
 
